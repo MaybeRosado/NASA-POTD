@@ -3,9 +3,8 @@
   line-height: 1.5;
   font-weight: 400;
 
-
   color: white;
-  background-color: #020615;
+  background-color: #030615;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -13,7 +12,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-*{
+* {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
@@ -23,9 +22,14 @@
   min-height: 100vh;
   display: flex;
   display: relative;
-  
 }
 
+.imgContainer {
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh;
+  width: 100%;
+}
 
 .bgImage {
   width: 100%;
@@ -34,20 +38,16 @@
   object-fit: cover;
 }
 
-.imgContainer {
-  display: flex;
-  flex-direction: column ;
-}
-
 footer {
   position: fixed;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding:  1rem;
+  padding: 1rem;
 }
 
 footer div {
@@ -55,13 +55,13 @@ footer div {
   flex-direction: column;
 }
 
+footer h2 {
+  font-size: 1.4rem;
+}
+
 footer h1 {
   font-size: 0.9rem;
   font-weight: 200;
-}
-
-footer h2 {
-  font-size: 1.4rem
 }
 
 footer button {
@@ -74,7 +74,7 @@ footer button {
   cursor: pointer;
 }
 
-footer button i{
+footer button i {
   font-size: 1.3rem;
 }
 
@@ -82,20 +82,19 @@ footer button:hover {
   opacity: 0.7;
 }
 
-.bgGradiant {
+.bgGradient {
   position: absolute;
   inset: 0;
   z-index: -1;
-  background: linear-gradient(to top, #030615, rgba(255,255,255,0));
+  background: linear-gradient(to top, #030615, rgba(255, 255, 255, 0));
 }
 
-.sideBar {
+.sidebar {
   position: fixed;
   inset: 0;
   display: flex;
   flex-direction: column;
   z-index: 10;
-
 }
 
 .bgOverlay {
@@ -105,54 +104,54 @@ footer button:hover {
   opacity: 0.6;
 }
 
-.sideBarContents{
+.sidebarContents {
   z-index: 15;
   position: relative;
+  display: flex;
   flex-direction: column;
   gap: 1rem;
   padding: 1rem;
   overflow-y: scroll;
-  display: flex;
   height: 100%;
   width: 80%;
   max-width: 800px;
-  margin: auto;
+  margin-left: auto;
   background: #030615;
-
 }
 
-.sideBarContents div {
+.sidebarContents h2 {
+  font-weight: 200;
+  font-size: 1.4rem;
+}
+
+.sidebarContents div {
   flex: 1;
 }
 
-.sideBarContents button {
+.sidebarContents button {
   background: transparent;
   color: white;
   border: none;
   outline: none;
   margin-right: auto;
-  transition: 200ms;
+  cursor: pointer;
+  transition-duration: 200ms;
   padding: 1rem 0;
 }
 
-.sideBarContents h2{
-  font-weight: 200;
-  font-size: 1.4rem;
+.sidebarContents button:hover {
+  opacity: 0.7;
 }
 
-.sideBarContents button:hover{
-  opacity: 0;
-}
-
-.descriptionTitle{
-  font-size: 1.1rem;
-  font-weight: 200;
-}
-
-.descriptionContainer{
+.descriptionContainer {
   display: flex;
   flex-direction: column;
-  gap: .5rem;
+  gap: 0.5rem;
+}
+
+.descriptionTitle {
+  font-size: 1.1rem;
+  font-weight: 200;
 }
 
 .loadingState {
@@ -162,34 +161,40 @@ footer button:hover {
   flex: 1;
 }
 
-.loadingState i{
-  opacity: .2;
+.loadingState i {
+  opacity: 0.2;
   font-size: 3rem;
   animation: spin 1s linear infinite;
 }
 
-@keyframes  spin {
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
-  to{
+
+  to {
     transform: rotate(360deg);
   }
 }
 
-@media (min-widht: 640px) {
-  .sideBar {
+
+@media (min-width: 640px) {
+  .sidebar {
     position: relative;
     inset: unset;
     min-width: 30%;
+    max-height: 100vh;
     box-shadow: 0 0 40px 1px #030615;
   }
 
-  .sideBarContents{
+  .sidebarContents {
     margin: unset;
+    width: 100%;
+  }
+
+  .bgOverlay {
+    right: 0;
+    left: unset;
+    width: 100vw;
   }
 }
-
-
-
-

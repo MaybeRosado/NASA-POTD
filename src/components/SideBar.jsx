@@ -2,21 +2,19 @@ const SideBar = (props) => {
     const {handleToggleModal, data} = props;
 
   return (
-    <div className="sideBar">
-        <div onClick={handleToggleModal} 
-        className="bgOverlay">
-            <div className="sideBarContents">
-                <h2 className="descriptionTitle">{data?.title}</h2>
+    <div className="sidebar">
+            <div onClick={handleToggleModal} className="bgOverlay"></div>
+            <div className="sidebarContents">
+                <h2>{data?.title}</h2>
                 <div className="descriptionContainer">
-                    <p>{data?.date}</p>
+                    <p className="descriptionTitle">{data?.date}</p>
                     <p>{data?.explanation}</p>
                 </div>
+                <button onClick={handleToggleModal}>
+                    <i className="fa-solid fa-arrow-right"></i>
+                </button>
             </div>
-            <button onClick={handleToggleModal}>
-                <i className="fa-solid fa-arrow-right"></i>
-            </button>
         </div>
-    </div>
   )
 }
 
